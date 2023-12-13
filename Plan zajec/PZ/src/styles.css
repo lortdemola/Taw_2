@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {  min-width: 900px;max-width: 1920px;  background-color: #2E2B38; /* Set a fixed width for the entire site */
+  margin: 0 auto; /* Center the site horizontally */ font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+

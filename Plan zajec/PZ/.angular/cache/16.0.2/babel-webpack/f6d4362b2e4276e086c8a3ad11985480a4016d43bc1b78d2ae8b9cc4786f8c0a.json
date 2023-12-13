@@ -1,0 +1,1 @@
+{"ast":null,"code":"export {};","map":{"version":3,"names":[],"sources":["E:\\Taw\\blog11\\blog\\blog\\src\\app\\services\\auth.service.ts"],"sourcesContent":["export interface Token {\n  token: string;\n}\n"],"mappings":""},"metadata":{},"sourceType":"module","externalDependencies":[]}

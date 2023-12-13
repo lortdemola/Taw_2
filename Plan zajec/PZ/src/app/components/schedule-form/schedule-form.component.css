@@ -1,0 +1,73 @@
+
+
+
+
+
+/* Clearfix (clear floats) */
+
+button{
+
+  background-color: #494750;
+  color: whitesmoke;
+}
+.buttons{
+  width: 10vw;
+  height: 10vh;
+  background-color: #494750;
+  color: whitesmoke;
+}
+tbody {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: flex;
+  flex-direction: row;
+
+  margin-left: 0px;
+  width: 100%;
+  max-height: 100vh;
+  border: 10px solid rgba(0, 0, 0, 0);
+}
+tr.column {
+  display: block;
+  float: left;
+  width: 33.33%; /* Adjust this value based on the number of columns you want */
+  box-sizing: border-box;
+  overflow-y: scroll;
+height: 38vh;
+  border: 2px solid #000000;
+  scroll-behavior: smooth;
+
+}
+td {
+
+
+  text-align: left;
+  padding: 10px;
+  background-color: #130F20;
+  color: white;
+
+}
+.each {
+
+  text-align: left;
+  padding: 5px;
+  background-color: #2E2B38;
+
+}
+input,select{
+  background-color: #494750;
+  color: whitesmoke;
+
+}
+
+.doc {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 16px;
+  background-color: #3C3944;
+
+}
+.each2:nth-child(even){
+  background-color: #57555C;
+}
+

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-navyblue">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Shedule</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/']">Home</a>
+        </li>
+
+        <!-- Add the Teams tab -->
+        <li *ngIf="authService.isLoggedIn() && gotSize == 0 " class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/Schedule']">C_Schedule </a>
+        </li>
+        <li *ngIf="authService.isLoggedIn() && gotSize >= 1 " class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/ScheduleEdit']">E_Schedule </a>
+        </li>
+        <li *ngIf="authService.isLoggedIn() && this.authService.currentUser.role == 'admin' " class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/AdminView']">Admin </a>
+        </li>
+
+      </ul>
+      <div class="d-flex align-items-center">
+
+          <div class="menu-items">
+            <button *ngIf="authService.isLoggedIn()" class="btn btn-dark" (click)="signOut()">Wyloguj</button>
+            <button *ngIf="!authService.isLoggedIn()" class="btn btn-success" href="#" [routerLink]="['/login']">
+              Login
+            </button>
+            <button *ngIf="!authService.isLoggedIn()" class="btn btn-info" href="#" [routerLink]="['/signup']">
+              SignUp
+            </button>
+          </div>
+
+    </div>
+    </div>
+  </div>
+</nav>

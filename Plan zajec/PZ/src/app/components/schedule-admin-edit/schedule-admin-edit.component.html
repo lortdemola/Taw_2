@@ -1,0 +1,51 @@
+<form style="height: 88vh;min-width: 100vw" [formGroup]="scheduleForm" (ngSubmit)="submitSchedule()">
+
+  <tbody class="row" formArrayName="scheduleEntries">
+  <tr class="column" *ngFor="let course of formArr2.controls; let x = index;" [formGroupName]="x">
+    <div class="m-1  ">
+      <td>
+        <label for="dayOfWeek">dayOfWeek:</label>
+        <select id="dayOfWeek" formControlName="dayOfWeek">
+          <option *ngFor="let weekday of weekdays" [value]="weekday">{{ weekday }}</option>
+        </select>
+        <button type="button" class="btn btn-light m-2" (click)="removeDay(x)">Remove Day</button>
+      </td>
+      <td class="each" formArrayName="courses">
+        <button type="button"  (click)="addNewRow(course)" class="btn btn-success m-2">add Course</button>
+        <div class="each2" id="2222" *ngFor="let cour of former(course).controls ; let i = index;" [formGroupName]="i">
+          <label for="cors">Course {{i+1}}:</label>
+          <div id="cors" class="doc">
+            <label for="times">Time:</label>
+            <div id="times">
+              <label for="timeFrom">From:</label>
+              <input type="time" id="timeFrom" formControlName="timeFrom" #timefromInput (input)="formatTimeRange(timefromInput,timetoInput,cour);" min="07:00" max="21:00" required />
+              <label for="timeTo">To:</label>
+              <input type="time" id="timeTo"  formControlName="timeTo" #timetoInput (input)="formatTimeRange(timefromInput,timetoInput,cour); " min="{{timefromInput.value}}" max="21:00" required />
+
+
+            </div>
+
+            <div>Time Range: <p id="time" >{{ formatTimeRange(timefromInput,timetoInput,cour) }}</p></div>
+            <label for="course">Course:</label>
+            <input type="text" id="course" formControlName="course" />
+
+            <button type="button" class="btn btn-danger m-md-2" (click)="removeCourse(i,course)">Remove Course</button>
+
+
+
+          </div></div>
+
+
+      </td>
+
+
+    </div>
+  </tr>
+  <tr>
+
+  </tr>
+  <button type="button" (click)="addNewCol()" class="btn btn-dark buttons">add Day</button>
+  <button class="btn btn-light buttons" type="submit">Submit</button>
+  </tbody>
+
+</form>

@@ -1,0 +1,12 @@
+<table>
+  <tr  *ngFor="let course of formArr2.controls; let x = index;" >
+    <th  id="timeFrom"  >User: {{course.get('name')?.value}}</th>
+    <td id="timeTo"  >Schedules: {{course.get('scheduleData')?.value}}</td>
+    <td>
+     <button class="btn btn-light buttons" [routerLink]="['/ScheduleEdit/',course.get('id')?.value]">edit</button>
+      <button class="btn btn-dark buttons" (click)="deleteSchedule(course.get('id')?.value)">Delete</button>
+    </td>
+  </tr>
+
+</table>
+

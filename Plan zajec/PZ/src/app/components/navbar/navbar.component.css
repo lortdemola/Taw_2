@@ -1,0 +1,23 @@
+.bg-navyblue {
+  background-color: #130F20;
+  color: aqua;
+}
+button{
+
+  background-color: #494750;
+  color: whitesmoke;
+  margin-right: 10px;
+}
+.menu-items {
+  display: flex;
+  flex-direction: row;
+
+  align-items: flex-end;
+}
+.menu-right {
+  right: 0;
+  left: auto;
+}
+.nav-link{
+  color: whitesmoke;
+}
