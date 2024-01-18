@@ -1,3 +1,9 @@
 <navbar></navbar>
 <router-outlet></router-outlet>
+<div routerLink="/" routerLinkActive #rla="routerLinkActive"
+   [routerLinkActiveOptions]="{exact:true}">
+  <div *ngIf="rla.isActive && !authService.isLoggedIn()"  class="notLogon">
+    <p>Please log in or create a new account in top right corner</p>
+  </div>
+</div>
 <app-footer></app-footer>

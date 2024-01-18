@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-navyblue">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Shedule</a>
+    <a class="navbar-brand" href="#">Sched-ruler</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -15,7 +15,7 @@
         <li *ngIf="authService.isLoggedIn() && gotSize == 0 " class="nav-item">
           <a class="nav-link" href="#" [routerLink]="['/Schedule']">C_Schedule </a>
         </li>
-        <li *ngIf="authService.isLoggedIn() && gotSize >= 1 " class="nav-item">
+        <li *ngIf="authService.isLoggedIn() && gotSize > 0 " class="nav-item">
           <a class="nav-link" href="#" [routerLink]="['/ScheduleEdit']">E_Schedule </a>
         </li>
         <li *ngIf="authService.isLoggedIn() && this.authService.currentUser.role == 'admin' " class="nav-item">

@@ -1,31 +1,16 @@
 
-<div id="here" style="height: 88vh;min-width: 100vw" *ngIf="authService.isLoggedIn() && chartOptions.series.length == 1">
+<div id="here" class="Logon" style="height: 88vh;min-width: 100vw" *ngIf="authService.isLoggedIn() && chartOptions.series.length == 1">
   <apx-chart
     [series]="chartOptions.series"
     [chart]="chartOptions.chart"
     [fill]="chartOptions.fill"
-
+    [tooltip]="chartOptions.tooltip"
     [plotOptions]="chartOptions.plotOptions"
     [xaxis]="chartOptions.xaxis"
   ></apx-chart>
-  <pre style="color: white">{{hmmJSON | json}}</pre>
-  <pre style="color: white">{{hmmJSON2 | json}}</pre>
-  <div class="column" *ngFor="let course of formArr2.controls; let x = index;" >
-    <p  >{{course.get('dayOfWeek')?.value}}</p>
-        <div class="each2" id="2222" *ngFor="let cour of former(course).controls ; let i = index;" >
-          <label for="cors">Course {{i+1}}:</label>
-          <div id="cors" class="doc">
-            <label for="timeFrom">Time:</label>
-
-                <p id="timeFrom"  >{{cour.get('timeFrom')?.value}} - {{cour.get('timeTo')?.value}}</p>
-
-            <label for="course">Name:</label>
-            <p type="text" id="course" >{{cour.get('course')?.value}}</p>
-          </div></div>
-    </div>
 
 </div>
-<div  style="height: 88vh;min-width: 100vw;" *ngIf="authService.isLoggedIn() && chartOptions.series.length > 1">
+<div class="Logon" style="height: 88vh;min-width: 100vw;" *ngIf="authService.isLoggedIn() && chartOptions.series.length > 1">
 
   <apx-chart
     [series]="chartOptions.series"
@@ -37,10 +22,4 @@
   ></apx-chart>
 
 </div>
-<div  style="height: 88vh;min-width: 100vw" *ngIf="!authService.isLoggedIn()">
 
-  <div class="column" >
-   <p>create new  shedule</p>
-  </div>
-
-</div>

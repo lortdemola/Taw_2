@@ -1,0 +1,22 @@
+.notLogon{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  color:  antiquewhite;
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+  padding: 30vh 45vw;
+  font-size: 24px;
+}
+.Logon{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+
+  text-align: center;
+  font-family: 'Comic Sans MS', cursive;
+
+  font-size: 24px;
+}

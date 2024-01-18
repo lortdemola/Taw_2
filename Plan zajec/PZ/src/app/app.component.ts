@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import {AuthService} from "./services/auth.service";
+import {DataService} from "./services/data.service";
+import {FormBuilder} from "@angular/forms";
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Shedule';
+  constructor(public authService: AuthService) {
+
+  }
 }
